@@ -7,7 +7,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "typecheck": "npx nuxi typecheck"
+    "typecheck": "npx nuxi typecheck",
+    "devtools:enable": "npx nuxi@latest devtools enable",
+    "devtools:disable": "npx nuxi@latest devtools disable"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
