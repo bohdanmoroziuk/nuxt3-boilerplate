@@ -33,3 +33,9 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Features
+
+- [Source directory](https://nuxt.com/docs/api/configuration/nuxt-config#srcdir)
+- [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
+- [Global types](https://stackoverflow.com/a/73237686)
