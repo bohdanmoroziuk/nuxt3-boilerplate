@@ -55,8 +55,15 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
   })
   ```
 
-  - [Nuxt Devtools](https://devtools.nuxtjs.org/)
+- [Nuxt Devtools](https://devtools.nuxtjs.org/)
 
   ```bash
   npx nuxi@latest devtools enable
+  ```
+
+- Predefined layouts
+
+  ```text
+  src/layouts/default.vue
+  src/layouts/empty.vue
   ```
