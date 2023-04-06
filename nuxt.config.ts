@@ -5,4 +5,7 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
+  modules: [
+    '@vueuse/nuxt',
+  ],
 });
