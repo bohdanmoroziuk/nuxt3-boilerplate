@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { x, y } = useMouse();
+const { x, y } = useMouse()
 </script>
 
 <template>
@@ -10,7 +10,7 @@ const { x, y } = useMouse();
     <img
       :src="useAsset('images/cat.jpg')"
       alt="Cat"
-      height="240"  
-    />
+      height="240"
+    >
   </div>
 </template>
