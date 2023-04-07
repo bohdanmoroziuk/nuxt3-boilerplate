@@ -12,7 +12,7 @@ Make sure to install the dependencies:
 npm install
 ```
 
-### Devtools
+### DevTools
 
 Enable devtools:
 
@@ -67,20 +67,20 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [x] [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
 - [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
 - [x] [State management (Pinia)](https://pinia.vuejs.org/)
-- [x] [Devtools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
+- [x] [DevTools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
 - [x] Built-in layouts
   - [x] Default layout
   - [x] Empty layout
 - [x] Built-in 404 page
 - [x] Built-in global types
-- [ ] Built-in composables
-  - [ ] useAsset
+- [x] Built-in composables
+  - [x] [useAsset](./src/composables/asset.ts)
 
 ## Setup notes
 
 ### src directory
 
-1. Set srcDir option in nuxt.config file.
+1. Set `srcDir` option in `nuxt.config` file.
 
     ```typescript
     // nuxt.config.ts
@@ -98,7 +98,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     npm i -D vue-tsc typescript @types/node
     ```
 
-2. Enable the `typescript.typeCheck` option in your nuxt.config file.
+2. Enable the `typescript.typeCheck` option in your `nuxt.config` file.
 
     ```typescript
     export default defineNuxtConfig({
@@ -127,7 +127,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     npm i -D @vueuse/nuxt @vueuse/core
     ```
 
-2. Add module to nuxt.config file
+2. Add VueUse to `nuxt.config` file
 
     ```typescript
     // nuxt.config.ts
@@ -147,7 +147,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     npm i pinia @pinia/nuxt
     ```
 
-2. Add Pinia to nuxt.config file 
+2. Add Pinia to `nuxt.config` file 
 
     ```typescript
     // nuxt.config.ts
@@ -169,7 +169,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     });
     ```
 
-### Devtools (Nuxt DevTools)
+### DevTools (Nuxt DevTools)
 
 1. To enable devtools run:
 
