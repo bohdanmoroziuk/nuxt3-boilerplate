@@ -6,4 +6,10 @@ declare global {
     name: string;
     email: string;
   }
+
+  interface Post {
+    id: string;
+    title: string;
+    body: string;
+  }
 }

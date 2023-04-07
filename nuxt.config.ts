@@ -10,8 +10,12 @@ export default defineNuxtConfig({
     dirs: ['stores']
   },
   modules: [
+    // Installed modules
     '@vueuse/nuxt',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+
+    // User modules
+    './src/modules/blog/module.ts'
   ],
   pinia: {
     autoImports: [

@@ -77,6 +77,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [ ] Husky & Commitlint
 - [ ] Unit Test
 - [x] [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
+- [x] Modular structure
 - [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
 - [x] [State management (Pinia)](https://pinia.vuejs.org/)
 - [x] [DevTools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
@@ -193,6 +194,16 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
       },
     }
     ```
+
+### Modular structure
+
+How to add and use your own modules:
+
+1.
+2.
+3.
+4.
+5.
 
 ### Vue Composition Utilities (VueUse)
 
