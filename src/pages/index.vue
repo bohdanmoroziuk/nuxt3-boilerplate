@@ -6,5 +6,6 @@ const { x, y } = useMouse();
   <div>
     <h1>Home</h1>
     <p>Mouse position: {{ x }} {{ y }}</p>
+    <Counter />
   </div>
 </template>

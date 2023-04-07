@@ -55,8 +55,44 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
   })
   ```
 
-  - [Nuxt Devtools](https://devtools.nuxtjs.org/)
+- [Nuxt Devtools](https://devtools.nuxtjs.org/)
 
   ```bash
   npx nuxi@latest devtools enable
+  ```
+
+- Predefined layouts
+
+  ```text
+  src/layouts/default.vue
+  src/layouts/empty.vue
+  ```
+
+- [Pinia](https://pinia.vuejs.org/)
+
+  Install Pinia in Nuxt 3
+
+  ```bash
+  npm i pinia @pinia/nuxt
+  ```
+
+  Add Pinia to your nuxt.config file 
+
+  ```typescript
+  // nuxt.config.ts
+  export default defineNuxtConfig({
+    imports: {
+      // Auto-import pinia stores defined in `~/stores`
+      dirs: ['stores']
+    },
+    modules: [
+      '@pinia/nuxt',
+    ],
+    pinia: {
+      autoImports: [
+        'defineStore',
+        'storeToRefs',
+      ],
+    },
+  });
   ```
