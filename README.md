@@ -34,6 +34,18 @@ Manually check types:
 npm run typecheck
 ```
 
+Find ESLint errors:
+
+```bash
+npm run lint
+```
+
+Find ESLint errors and try to fix them:
+
+```bash
+npm run lint:fix
+```
+
 ### Development Server
 
 Start the development server on `http://localhost:3000`
@@ -61,16 +73,17 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ## Features
 
 - [x] `src` directory
-- [ ] Eslint & Prettier
+- [x] [ESLint](https://qiita.com/kentarou_masuda/items/c0180fe383b01ba54cbf)
 - [ ] Husky & Commitlint
 - [ ] Unit Test
 - [x] [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
+- [x] Modular structure
 - [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
 - [x] [State management (Pinia)](https://pinia.vuejs.org/)
 - [x] [DevTools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
 - [x] Built-in layouts
-  - [x] Default layout
-  - [x] Empty layout
+  - [x] [Default](./src/layouts/default.vue)
+  - [x] [Empty](./src/layouts/empty.vue)
 - [x] Built-in 404 page
 - [x] Built-in global types
 - [x] Built-in composables
@@ -88,6 +101,69 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     export default defineNuxtConfig({
       srcDir: 'src/',
     });
+    ```
+
+### ESLint
+
+1. Install needed devDependencies
+
+    ```bash
+    npm i -D eslint eslint-plugin-vue
+    ```
+
+    ```bash
+    npm i -D typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser @nuxtjs/eslint-config-typescript
+    ```
+
+2. Generate config file
+
+    ```bash
+    npx eslint --init
+
+    > To check syntax and find problems
+    > JavaScript modules (import/export)
+    > Vue.js
+    > Does your project use TypeScript? Yes
+    > Where does your code run? Node
+    > What format do you want your config file to be in? JavaScript
+    > Would you like to install them now with npm? No
+    ```
+
+    ```javascript
+    // .eslintrc.js
+
+    module.exports = {
+      "env": {
+          "es2021": true,
+          "node": true
+      },
+      "extends": [
+          "eslint:recommended",
+          "plugin:vue/essential",
+          "plugin:@typescript-eslint/recommended",
+          "@nuxtjs/eslint-config-typescript" // Add here
+      ],
+      "parserOptions": {
+          "ecmaVersion": 13,
+          "parser": "@typescript-eslint/parser",
+          "sourceType": "module"
+      },
+      "plugins": [
+          "vue",
+          "@typescript-eslint"
+      ],
+      "rules": {
+      }
+    };
+    ```
+
+3. Add task scripts
+
+    ```json
+    "scripts": {
+      "lint": "eslint --ext .ts,.js,.vue .",
+      "lint:fix": "eslint --fix --ext .ts,.js,.vue ."
+    },
     ```
 
 ### Strict type-checking
@@ -118,6 +194,16 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
       },
     }
     ```
+
+### Modular structure
+
+How to add and use your own modules:
+
+1.
+2.
+3.
+4.
+5.
 
 ### Vue Composition Utilities (VueUse)
 

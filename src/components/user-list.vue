@@ -3,15 +3,15 @@ interface Props {
   users: User[];
 }
 
-defineProps<Props>();
+defineProps<Props>()
 </script>
 
 <template>
   <ul class="user-list">
     <li
-      class="user-list__item"
       v-for="user of users"
-      :key="user.id"  
+      :key="user.id"
+      class="user-list__item"
     >
       {{ user.name }} - {{ user.email }}
     </li>
