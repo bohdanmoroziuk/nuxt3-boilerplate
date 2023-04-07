@@ -5,7 +5,18 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
+  imports: {
+    // Auto-import pinia stores defined in `~/stores`
+    dirs: ['stores']
+  },
   modules: [
     '@vueuse/nuxt',
+    '@pinia/nuxt',
   ],
+  pinia: {
+    autoImports: [
+      'defineStore',
+      'storeToRefs',
+    ],
+  },
 });
