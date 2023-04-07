@@ -1,8 +1,10 @@
 # Nuxt 3 Boilerplate
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A Nuxt 3 starter boilerplate with a lot of useful features.
 
-## Setup
+## Available scripts
+
+### Setup
 
 Make sure to install the dependencies:
 
@@ -10,7 +12,29 @@ Make sure to install the dependencies:
 npm install
 ```
 
-## Development Server
+### Devtools
+
+Enable devtools:
+
+```bash
+npx nuxi@latest devtools enable
+```
+
+Disable devtools:
+
+```bash
+npx nuxi@latest devtools disable
+```
+
+### Lint & format
+
+Manually check types:
+
+```bash
+npm run typecheck
+```
+
+### Development Server
 
 Start the development server on `http://localhost:3000`
 
@@ -18,7 +42,7 @@ Start the development server on `http://localhost:3000`
 npm run dev
 ```
 
-## Production
+### Production
 
 Build the application for production:
 
@@ -36,63 +60,144 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 ## Features
 
-- [Source directory](https://nuxt.com/docs/api/configuration/nuxt-config#srcdir)
-- [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
-- [Global types](https://stackoverflow.com/a/73237686)
-- [404 page](https://www.reddit.com/r/Nuxt/comments/s7mtkz/how_to_create_nuxt_3_404_error_page/?utm_source=share&utm_medium=web2x&context=3)
-- [VueUse](https://vueuse.org/)
+- [x] `src` directory
+- [ ] Eslint & Prettier
+- [ ] Husky & Commitlint
+- [ ] Unit Test
+- [x] [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
+- [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
+- [x] [State management (Pinia)](https://pinia.vuejs.org/)
+- [x] [Devtools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
+- [x] Built-in layouts
+  - [x] Default layout
+  - [x] Empty layout
+- [x] Built-in 404 page
+- [x] Built-in global types
+- [ ] Built-in composables
+  - [ ] useAsset
 
-  ```bash
-  npm i -D @vueuse/nuxt @vueuse/core
-  ```
+## Setup notes
 
-  ```typescript
-  // nuxt.config.ts
-  export default defineNuxtConfig({
-    modules: [
-      '@vueuse/nuxt',
-    ],
-  })
-  ```
+### src directory
 
-- [Nuxt Devtools](https://devtools.nuxtjs.org/)
+1. Set srcDir option in nuxt.config file.
 
-  ```bash
-  npx nuxi@latest devtools enable
-  ```
+    ```typescript
+    // nuxt.config.ts
 
-- Predefined layouts
+    export default defineNuxtConfig({
+      srcDir: 'src/',
+    });
+    ```
 
-  ```text
-  src/layouts/default.vue
-  src/layouts/empty.vue
-  ```
+### Strict type-checking
 
-- [Pinia](https://pinia.vuejs.org/)
+1. Install needed devDependencies
 
-  Install Pinia in Nuxt 3
+    ```bash
+    npm i -D vue-tsc typescript @types/node
+    ```
 
-  ```bash
-  npm i pinia @pinia/nuxt
-  ```
+2. Enable the `typescript.typeCheck` option in your nuxt.config file.
 
-  Add Pinia to your nuxt.config file 
+    ```typescript
+    export default defineNuxtConfig({
+      typescript: {
+        strict: true,
+        typeCheck: true,
+      },
+    });
+    ```
 
-  ```typescript
-  // nuxt.config.ts
-  export default defineNuxtConfig({
-    imports: {
-      // Auto-import pinia stores defined in `~/stores`
-      dirs: ['stores']
-    },
-    modules: [
-      '@pinia/nuxt',
-    ],
-    pinia: {
-      autoImports: [
-        'defineStore',
-        'storeToRefs',
+3. Optionally add task script to manually check your types with `nuxi`.
+
+    ```json
+    {
+      "scripts": {
+        "typecheck": "npx nuxi typecheck",
+      },
+    }
+    ```
+
+### Vue Composition Utilities (VueUse)
+
+1. Install VueUse
+
+    ```bash
+    npm i -D @vueuse/nuxt @vueuse/core
+    ```
+
+2. Add module to nuxt.config file
+
+    ```typescript
+    // nuxt.config.ts
+    
+    export default defineNuxtConfig({
+      modules: [
+        '@vueuse/nuxt',
       ],
-    },
-  });
-  ```
+    })
+    ```
+
+### State management (Pinia)
+
+1. Install Pinia
+
+    ```bash
+    npm i pinia @pinia/nuxt
+    ```
+
+2. Add Pinia to nuxt.config file 
+
+    ```typescript
+    // nuxt.config.ts
+
+    export default defineNuxtConfig({
+      imports: {
+        // Auto-import pinia stores defined in `~/stores`
+        dirs: ['stores']
+      },
+      modules: [
+        '@pinia/nuxt',
+      ],
+      pinia: {
+        autoImports: [
+          'defineStore',
+          'storeToRefs',
+        ],
+      },
+    });
+    ```
+
+### Devtools (Nuxt DevTools)
+
+1. To enable devtools run:
+
+    ```bash
+    npx nuxi@latest devtools enable
+    ```
+
+2. To disable devtools run:
+
+    ```bash
+    npx nuxi@latest devtools disable
+    ```
+
+### Global types
+
+1. At the root of your project create a directory named `types` with an `index.ts` file.
+2. Add your global types declaration like in the example below.
+
+    ```typescript
+    // ~/types/index.ts
+
+    export { };
+
+    declare global {
+      interface User {
+        id: string;
+        name: string;
+        email: string;
+      }  
+    }
+    ```
