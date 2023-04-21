@@ -84,6 +84,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [x] Built-in layouts
   - [x] [Default](./src/layouts/default.vue)
   - [x] [Empty](./src/layouts/empty.vue)
+- [x] Basic error handling
 - [x] Built-in 404 page
 - [x] Built-in global types
 - [x] Built-in composables
