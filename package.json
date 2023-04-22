@@ -1,6 +1,11 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxt3-boilerplate",
   "private": true,
+  "author": {
+    "name" : "Bogdan Morozyuk",
+    "email" : "bogdan7morozyuk@gmail.com",
+    "url" : "https://github.com/yuzumi"
+  },
   "overrides": {
     "vue": "latest"
   },

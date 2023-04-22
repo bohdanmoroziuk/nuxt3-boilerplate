@@ -17,13 +17,13 @@ npm install
 Enable devtools:
 
 ```bash
-npx nuxi@latest devtools enable
+npm run devtools:enable
 ```
 
 Disable devtools:
 
 ```bash
-npx nuxi@latest devtools disable
+npm run devtools:disable
 ```
 
 ### Lint & format
@@ -48,7 +48,7 @@ npm run lint:fix
 
 ### Development Server
 
-Start the development server on `http://localhost:3000`
+Start the development server on <http://localhost:3000>
 
 ```bash
 npm run dev
@@ -81,12 +81,13 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
 - [x] [State management (Pinia)](https://pinia.vuejs.org/)
 - [x] [DevTools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
-- [x] Built-in layouts
+- [x] Layouts
   - [x] [Default](./src/layouts/default.vue)
   - [x] [Empty](./src/layouts/empty.vue)
-- [x] Built-in 404 page
-- [x] Built-in global types
-- [x] Built-in composables
+- [x] [Error page](./src/error.vue)
+- [x] [404 page](./src/pages/%5B...404%5D.vue)
+- [x] [Global types](./src/types/index.ts)
+- [x] Composables
   - [x] [useAsset](./src/composables/asset.ts)
 
 ## Setup notes
@@ -197,15 +198,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 ### Modular structure
 
-How to add and use your own modules:
-
-1.
-2.
-3.
-4.
-5.
-
-### Vue Composition Utilities (VueUse)
+### VueUse
 
 1. Install VueUse
 
@@ -225,7 +218,7 @@ How to add and use your own modules:
     })
     ```
 
-### State management (Pinia)
+### Pinia
 
 1. Install Pinia
 
@@ -255,7 +248,7 @@ How to add and use your own modules:
     });
     ```
 
-### DevTools (Nuxt DevTools)
+### Nuxt DevTools
 
 1. To enable devtools run:
 
