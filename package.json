@@ -2,9 +2,9 @@
   "name": "nuxt3-boilerplate",
   "private": true,
   "author": {
-    "name" : "Bogdan Morozyuk",
-    "email" : "bogdan7morozyuk@gmail.com",
-    "url" : "https://github.com/yuzumi"
+    "name": "Bogdan Morozyuk",
+    "email": "bogdan7morozyuk@gmail.com",
+    "url": "https://github.com/yuzumi"
   },
   "overrides": {
     "vue": "latest"
@@ -31,11 +31,14 @@
     "eslint": "^8.37.0",
     "eslint-plugin-vue": "^9.10.0",
     "nuxt": "^3.3.2",
+    "nuxt-quasar-ui": "^1.7.3",
     "typescript": "^5.0.3",
     "vue-tsc": "^1.2.0"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.7",
-    "pinia": "^2.0.33"
+    "@quasar/extras": "^1.16.3",
+    "pinia": "^2.0.33",
+    "quasar": "^2.11.10"
   }
 }
