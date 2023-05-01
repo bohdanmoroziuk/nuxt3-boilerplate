@@ -75,12 +75,13 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [x] `src` directory
 - [x] [ESLint](https://qiita.com/kentarou_masuda/items/c0180fe383b01ba54cbf)
 - [ ] Husky & Commitlint
-- [ ] Unit Test
 - [x] [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
 - [x] Modular structure
+- [x] [Quasar UI](https://nuxt.com/modules/quasar)
 - [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
 - [x] [State management (Pinia)](https://pinia.vuejs.org/)
 - [x] [DevTools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
+- [x] [Vitest](https://vitest.dev/)
 - [x] Layouts
   - [x] [Default](./src/layouts/default.vue)
   - [x] [Empty](./src/layouts/empty.vue)
@@ -198,6 +199,31 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 ### Modular structure
 
+### Quasar UI
+
+1. Add `nuxt-quasar-ui` dependency to your project
+
+    ```bash
+    npm install quasar @quasar/extras
+    npm install --save-dev nuxt-quasar-ui
+    ```
+
+2. Add `nuxt-quasar-ui` to the `modules` section of `nuxt.config.ts`
+
+    ```typescript
+    export default defineNuxtConfig({
+      modules: [
+        'nuxt-quasar-ui'
+      ],
+      quasar: {
+        extras: {
+          font: 'roboto-font',
+          fontIcons: ['material-icons']
+        }
+      }
+    })
+    ```
+
 ### VueUse
 
 1. Install VueUse
@@ -260,6 +286,83 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
     ```bash
     npx nuxi@latest devtools disable
+    ```
+
+### Vitest
+
+1. Install the following dependencies:
+
+    ```bash
+    npm i -D vitest jsdom @vitejs/plugin-vue
+    npm i -D @vue/test-utils @nuxt/test-utils
+    ```
+
+2. Create your Vitest configuration file (vitest.config.js):
+
+    ```javascript
+    // vitest.config.js
+
+    import { defineConfig } from 'vite'
+    import vue from '@vitejs/plugin-vue'
+
+    export default defineConfig({
+      plugins: [vue()],
+      test: {
+        globals: true,
+        environment: 'jsdom',
+      },
+    })
+    ```
+
+3. Add ESLint plugin
+
+    ```bash
+    npm i -D eslint-plugin-vitest
+    ```
+
+    ```javascript
+    // .eslintrc.js
+
+    module.exports = {
+      // ...
+      plugins: ['vitest'],
+      // ...
+    }
+    ```
+
+4. Add the following script to your project:
+
+    ```json
+    // package.json
+
+    {
+      // ...
+      "scripts": {
+        // ...
+        "test": "vitest"
+        // ...
+      }
+      // ...
+    }
+    ```
+
+5. Create your first test:
+
+
+    ```typescript
+    // tests/components/HelloWorld.vue
+
+    import { describe, it, expect } from 'vitest'
+    import { mount } from '@vue/test-utils'
+
+    import HelloWorld from '../../src/components/HelloWorld.vue';
+
+    describe('HelloWorld', () => {
+      it('renders correctly', () => {
+        const wrapper = mount(HelloWorld)
+        expect(wrapper.html()).contain('Hello, world!')
+      })
+    })
     ```
 
 ### Global types

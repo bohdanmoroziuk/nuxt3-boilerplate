@@ -7,7 +7,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:vue/vue3-essential',
     'plugin:@typescript-eslint/recommended',
-    '@nuxtjs/eslint-config-typescript'
+    '@nuxtjs/eslint-config-typescript',
+    'vitest'
   ],
   overrides: [
   ],
