@@ -7,6 +7,7 @@ const currentYear = new Date().getFullYear()
     <header class="header">
       <Container>
         <h2>Header</h2>
+        <LocaleSwitch />
       </Container>
     </header>
     <main class="main">
