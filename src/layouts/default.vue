@@ -19,7 +19,17 @@ const toggleLeftDrawer = () => {
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above side="left" bordered>
-      <!-- drawer content -->
+      <q-list separator>
+        <q-item v-ripple clickable to="/">
+          <q-item-section>Home</q-item-section>
+        </q-item>
+        <q-item v-ripple clickable to="/tables">
+          <q-item-section>Tables</q-item-section>
+        </q-item>
+        <q-item v-ripple clickable to="/forms">
+          <q-item-section>Forms</q-item-section>
+        </q-item>
+      </q-list>
     </q-drawer>
 
     <q-page-container>
