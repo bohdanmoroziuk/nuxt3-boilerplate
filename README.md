@@ -77,7 +77,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [ ] Husky & Commitlint
 - [x] [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
 - [x] Modular structure
-- [x] [Quasar UI](https://nuxt.com/modules/quasar)
 - [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
 - [x] [State management (Pinia)](https://pinia.vuejs.org/)
 - [x] [DevTools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
@@ -198,31 +197,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     ```
 
 ### Modular structure
-
-### Quasar UI
-
-1. Add `nuxt-quasar-ui` dependency to your project
-
-    ```bash
-    npm install quasar @quasar/extras
-    npm install --save-dev nuxt-quasar-ui
-    ```
-
-2. Add `nuxt-quasar-ui` to the `modules` section of `nuxt.config.ts`
-
-    ```typescript
-    export default defineNuxtConfig({
-      modules: [
-        'nuxt-quasar-ui'
-      ],
-      quasar: {
-        extras: {
-          font: 'roboto-font',
-          fontIcons: ['material-icons']
-        }
-      }
-    })
-    ```
 
 ### VueUse
 
@@ -383,3 +357,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
       }  
     }
     ```
+
+## License
+
+MIT [@yuzumi](https://github.com/yuzumi)

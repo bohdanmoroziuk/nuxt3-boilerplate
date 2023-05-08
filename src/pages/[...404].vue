@@ -5,15 +5,12 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="error">
-    <h1 class="code">
+  <div class="flex flex-center column error">
+    <h1 class="q-mb-md">
       404
     </h1>
-    <p class="message">
+    <p>
       Page not found
     </p>
-    <button @click="navigateTo({ name: 'index' })">
-      Back to home
-    </button>
   </div>
 </template>
