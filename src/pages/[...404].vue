@@ -12,8 +12,5 @@ definePageMeta({
     <p>
       Page not found
     </p>
-    <q-btn color="primary" @click="navigateTo('/')">
-      Back to home
-    </q-btn>
   </div>
 </template>

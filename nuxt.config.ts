@@ -13,7 +13,6 @@ export default defineNuxtConfig({
     // Installed modules
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    'nuxt-quasar-ui',
 
     // User modules
     './src/modules/blog/module.ts'
@@ -23,11 +22,5 @@ export default defineNuxtConfig({
       'defineStore',
       'storeToRefs'
     ]
-  },
-  quasar: {
-    extras: {
-      font: 'roboto-font',
-      fontIcons: ['material-icons']
-    }
   }
 })
