@@ -358,6 +358,15 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     }
     ```
 
+## Templates
+
+Other templates you may be interested in:
+
+- [nuxt3-awesome-starter](https://github.com/viandwi24/nuxt3-awesome-starter)
+- [nuxt3-starter ](https://github.com/xiaoluoboding/nuxt3-starter)
+- [nuxt3-boilerplate](https://github.com/taunoha/nuxt3-boilerplate)
+- [nuxt3-eslint-starter](https://github.com/weicheng2138/nuxt3-eslint-starter)
+
 ## License
 
 MIT [@yuzumi](https://github.com/yuzumi)
