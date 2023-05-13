@@ -196,8 +196,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     }
     ```
 
-### Modular structure
-
 ### VueUse
 
 1. Install VueUse
