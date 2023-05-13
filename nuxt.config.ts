@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     // Installed modules
     '@vueuse/nuxt',
     '@pinia/nuxt',
+    '@nuxtjs/i18n',
 
     // User modules
     './src/modules/blog/module.ts'
@@ -22,5 +23,22 @@ export default defineNuxtConfig({
       'defineStore',
       'storeToRefs'
     ]
+  },
+  i18n: {
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        name: 'English'
+      },
+      {
+        code: 'fr',
+        iso: 'fr-FR',
+        name: 'Français'
+      }
+    ],
+    defaultLocale: 'en'
   }
 })

@@ -1,6 +1,9 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <header>
-    Header
+    <LocaleSwitch />
   </header>
   <main>
     <slot />
