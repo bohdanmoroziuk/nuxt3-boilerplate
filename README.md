@@ -76,7 +76,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [x] [ESLint](https://qiita.com/kentarou_masuda/items/c0180fe383b01ba54cbf)
 - [ ] Husky & Commitlint
 - [x] [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
-- [x] Modular structure
 - [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
 - [x] [State management (Pinia)](https://pinia.vuejs.org/)
 - [x] [DevTools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
@@ -305,16 +304,10 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 4. Add the following script to your project:
 
     ```json
-    // package.json
-
     {
-      // ...
       "scripts": {
-        // ...
         "test": "vitest"
-        // ...
       }
-      // ...
     }
     ```
 
