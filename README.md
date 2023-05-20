@@ -130,7 +130,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     ```
 
     ```javascript
-    // .eslintrc.js
+    // .eslintrc.cjs
 
     module.exports = {
       "env": {
