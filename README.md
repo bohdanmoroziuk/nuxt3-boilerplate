@@ -74,7 +74,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 - [x] `src` directory
 - [x] [ESLint](https://qiita.com/kentarou_masuda/items/c0180fe383b01ba54cbf)
-- [ ] Husky & Commitlint
+- [x] [Husky](https://typicode.github.io/husky/) & [Lint-staged](https://github.com/okonet/lint-staged)
 - [x] [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
 - [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
 - [x] [State management (Pinia)](https://pinia.vuejs.org/)
@@ -195,6 +195,42 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     }
     ```
 
+### Husky & Lint-staged
+
+1. Install Husky
+
+    ```bash
+    npx husky-init && npm install
+    ```
+
+2. Install Lint-staged
+
+    ```bash
+    npm install --save-dev lint-staged
+    ```
+
+3. Set up the `pre-commit` git hook
+
+Inside `.husky/pre-commit` replace `npm test` with `npx lint-staged`.
+
+    ```txt
+    #!/usr/bin/env sh
+    . "$(dirname -- "$0")/_/husky.sh"
+
+    npx lint-staged
+    ```
+
+4. Configure Lint-staged
+
+In the root directory of your project, create the file `.lintstagedrc.json`
+with the following contents:
+
+    ```json
+    {
+      "*.{js,jsx,vue,ts,tsx}": "npm run lint:fix"
+    }
+    ```
+
 ### VueUse
 
 1. Install VueUse
@@ -207,7 +243,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
     ```typescript
     // nuxt.config.ts
-    
+
     export default defineNuxtConfig({
       modules: [
         '@vueuse/nuxt',
@@ -223,7 +259,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     npm i pinia @pinia/nuxt
     ```
 
-2. Add Pinia to `nuxt.config` file 
+2. Add Pinia to `nuxt.config` file
 
     ```typescript
     // nuxt.config.ts
@@ -345,7 +381,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
         id: string;
         name: string;
         email: string;
-      }  
+      }
     }
     ```
 
