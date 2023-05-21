@@ -2,6 +2,13 @@
 
 A Nuxt 3 starter boilerplate with a lot of useful features.
 
+## Quick Start
+
+- This project using `npm` as package manager
+- Clone this project to your computer `git clone https://github.com/yuzumi/nuxt3-boilerplate`
+- Install dependencies `npm install`
+- Run `npm run dev` to start development server and open `http://localhost:3000` in your browser
+
 ## Available scripts
 
 ### Setup
@@ -74,17 +81,18 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 - [x] `src` directory
 - [x] [ESLint](https://qiita.com/kentarou_masuda/items/c0180fe383b01ba54cbf)
-- [x] [Husky](https://typicode.github.io/husky/) & [Lint-staged](https://github.com/okonet/lint-staged)
 - [x] [Strict type-checking](https://nuxt.com/docs/guide/concepts/typescript)
-- [x] [Vue Composition Utilities (VueUse)](https://vueuse.org/)
-- [x] [State management (Pinia)](https://pinia.vuejs.org/)
-- [x] [DevTools (Nuxt DevTools)](https://devtools.nuxtjs.org/)
+- [x] [Husky](https://typicode.github.io/husky/) & [Lint-staged](https://github.com/okonet/lint-staged)
+- [x] [i18n](https://v8.i18n.nuxtjs.org/)
+- [x] [VueUse](https://vueuse.org/)
+- [x] [Pinia](https://pinia.vuejs.org/)
+- [x] [Nuxt DevTools](https://devtools.nuxtjs.org/)
 - [x] [Vitest](https://vitest.dev/)
 - [x] Layouts
   - [x] [Default](./src/layouts/default.vue)
   - [x] [Empty](./src/layouts/empty.vue)
 - [x] [Error page](./src/error.vue)
-- [x] [404 page](./src/pages/%5B...404%5D.vue)
+- [x] [404 page](./src/pages/%5B...slug%5D.vue)
 - [x] [Global types](./src/types/index.ts)
 - [x] Composables
   - [x] [useAsset](./src/composables/asset.ts)
@@ -120,13 +128,13 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     ```bash
     npx eslint --init
 
-    > To check syntax and find problems
-    > JavaScript modules (import/export)
-    > Vue.js
+    > How would you like to use ESLint? To check syntax and find problems
+    > What type of modules does your project use? JavaScript modules (import/export)
+    > Which framework does your project use? Vue.js
     > Does your project use TypeScript? Yes
     > Where does your code run? Node
     > What format do you want your config file to be in? JavaScript
-    > Would you like to install them now with npm? No
+    > Would you like to install them now? No
     ```
 
     ```javascript
@@ -209,9 +217,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     npm install --save-dev lint-staged
     ```
 
-3. Set up the `pre-commit` git hook
-
-Inside `.husky/pre-commit` replace `npm test` with `npx lint-staged`.
+3. Inside `.husky/pre-commit` replace `npm test` with `npx lint-staged`.
 
     ```txt
     #!/usr/bin/env sh
@@ -220,9 +226,7 @@ Inside `.husky/pre-commit` replace `npm test` with `npx lint-staged`.
     npx lint-staged
     ```
 
-4. Configure Lint-staged
-
-In the root directory of your project, create the file `.lintstagedrc.json`
+4. In the root directory of your project, create the file `.lintstagedrc.json`
 with the following contents:
 
     ```json
@@ -286,13 +290,13 @@ with the following contents:
 1. To enable devtools run:
 
     ```bash
-    npx nuxi@latest devtools enable
+    npm run devtools:enable
     ```
 
 2. To disable devtools run:
 
     ```bash
-    npx nuxi@latest devtools disable
+    npm run devtools:disable
     ```
 
 ### Vitest
@@ -301,6 +305,9 @@ with the following contents:
 
     ```bash
     npm i -D vitest jsdom @vitejs/plugin-vue
+    ```
+
+    ```bash
     npm i -D @vue/test-utils @nuxt/test-utils
     ```
 
@@ -321,23 +328,7 @@ with the following contents:
     })
     ```
 
-3. Add ESLint plugin
-
-    ```bash
-    npm i -D eslint-plugin-vitest
-    ```
-
-    ```javascript
-    // .eslintrc.js
-
-    module.exports = {
-      // ...
-      plugins: ['vitest'],
-      // ...
-    }
-    ```
-
-4. Add the following script to your project:
+3. Add the following script to your project:
 
     ```json
     {
@@ -347,7 +338,7 @@ with the following contents:
     }
     ```
 
-5. Create your first test:
+4. Create your first test:
 
 
     ```typescript
