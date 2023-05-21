@@ -174,6 +174,17 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     },
     ```
 
+4. Update your VS Code settings to look like this:
+
+    ```json
+    {
+      "eslint.format.enable": true,
+      "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+      }
+    }
+    ```
+
 ### Strict type-checking
 
 1. Install needed devDependencies
