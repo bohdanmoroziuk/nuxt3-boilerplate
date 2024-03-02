@@ -77,6 +77,32 @@ npm run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+### Docker
+
+Create and start the development container:
+
+```bash
+make dev-up
+```
+
+Stop and remove the development container:
+
+```bash
+make dev-down
+```
+
+Create and start the production container:
+
+```bash
+make prod-up
+```
+
+Stop and remove the production container:
+
+```bash
+make prod-down
+```
+
 ## Features
 
 - [x] `src` directory
