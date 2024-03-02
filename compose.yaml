@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      target: development
+    ports:
+      - 3000:3000
+      - 24678:24678
+    volumes:
+      - ./src:/usr/src/app/src
+      - /usr/src/app/node_modules
